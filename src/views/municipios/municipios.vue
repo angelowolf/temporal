@@ -28,6 +28,9 @@
       },
       confirmarEliminarMunicipio () {
       }
+    },
+    created () {
+      console.log('hola negro')
     }
   }
 </script>

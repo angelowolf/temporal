@@ -19,6 +19,7 @@ import AppHeader from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import AppFooter from '../components/Footer'
 import Breadcrumb from '../components/Breadcrumb'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'full',
@@ -28,6 +29,11 @@ export default {
     AppFooter,
     Breadcrumb
   },
+  methods: {
+    ...mapActions([
+      'cargarParametros'
+    ])
+  },
   computed: {
     name () {
       return this.$route.name
@@ -36,6 +42,9 @@ export default {
     list () {
       return this.$route.matched
     }
+  },
+  created () {
+    this.cargarParametros()
   }
 }
 </script>
