@@ -31,7 +31,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'cargarParametros'
+      'cargarParametros',
+      'cargarPaises'
     ])
   },
   computed: {
@@ -44,7 +45,8 @@ export default {
     }
   },
   created () {
-    this.cargarParametros()
+    this.cargarPaises()
+    // this.cargarParametros()
   }
 }
 </script>

@@ -84,86 +84,49 @@
               <div class="col-md-4 border-left">
                 <div class="row">
                   <div class="col-md-7">
-                    <div class="col-md-12 form-group">
-                      <label for="paisInput">País</label>
-                      <select class="form-control form-control-sm" id="paisInput"
-                      name="pais">
-                      <option>Seleccione</option>
-                      <option selected="true">Argentina</option>
-                      <option>Paraguay</option>
-                      <option>Uruguay</option>
-                    </select>
+                    <select-ubicaccion :esFiltro="false" classSelect="col-md-12"  @localidadSeleccionada="localidadSeleccionada">
+                    </select-ubicaccion>
+                    <div class="col-md-12 text-right">
+                      <button type="button" class="btn btn-primary float-right m-xs"><i class="fa fa-plus"></i> Agregar</button>
+                    </div>
                   </div>
-                  <div class="col-md-12 form-group">
-                    <label for="provinciaInput">Provincia</label>
-                    <select class="form-control form-control-sm" id="provinciaInput"
-                    name="provincia">
-                    <option>Seleccione</option>
-                    <option >Buenos Aires</option>
-                    <option>Catamarca</option>
-                    <option selected="true">Córdoba</option>
-                    <option>Entre Ríos</option>
-                    <option>Formosa</option>
-                    <option>Jujuy</option>
-                    <option>Misiones</option>
-                    <option>Salta</option>
-                    <option>Santa Cruz</option>
-                    <option>Tierra del Fuego</option>
-                    <option>Tucumán</option>
-                  </select>
+                  <div class="col-md-5 p-l-xs p-r-xs">
+                    <div class="col-12 p-l-xs p-r-xs">
+                      <table class="table table-slim m-b-none" cellpadding="1" cellspacing="1">
+                        <thead>
+                          <tr>
+                            <th class="text-center" style="">Localidades</th>
+                            <th class="text-center" style=""></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Córdoba</td>
+                            <td style="width: 14px;">
+                              <button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-12 form-group">
-                  <label for="departamentoInput">Departamento</label>
-                  <select class="form-control form-control-sm" id="departamentoInput"
-                  name="departamento">
-                  <option>Seleccione</option>
-                  <option selected="true">Capital</option>
-                </select>
               </div>
-              <div class="col-md-12 form-group">
-                <label for="localidadInput">Localidad</label>
-                <select class="form-control form-control-sm" id="localidadInput"
-                name="localidad">
-                <option>Seleccione</option>
-                <option selected="true">Córdoba</option>
-              </select>
-            </div>
-            <div class="col-md-12 text-right">
-              <button type="button" class="btn btn-primary float-right m-xs"><i class="fa fa-plus"></i> Agregar</button>
-            </div>
-          </div>
-          <div class="col-md-5 p-l-xs p-r-xs">
-            <div class="col-12 p-l-xs p-r-xs">
-              <table class="table table-slim m-b-none" cellpadding="1" cellspacing="1">
-                <thead>
-                  <tr>
-                    <th class="text-center" style="">Localidades</th>
-                    <th class="text-center" style=""></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Córdoba</td>
-                    <td style="width: 14px;">
-                      <button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-</div>
 </template>
 <script>
   export default{
-    name: 'MunicipioNuevo'
+    name: 'MunicipioNuevo',
+    methods: {
+      localidadSeleccionada (id) {
+        console.log(id)
+      }
+    }
   }
 </script>

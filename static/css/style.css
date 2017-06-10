@@ -8581,7 +8581,7 @@ app-root {
 
 .header-fixed .app-header {
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   width: 100%; }
 
 .header-fixed .app-body {

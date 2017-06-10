@@ -7,6 +7,7 @@ import store from './store/'
 import Axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
+import SelectUbicaccion from './components/util/selectUbicaccion'
 
 Vue.config.productionTip = false
 
@@ -24,6 +25,8 @@ Axios.interceptors.request.use(function (config) {
   // Do something with request error
   return Promise.reject(error)
 })
+
+Vue.component('selectUbicaccion', SelectUbicaccion)
 
 /* eslint-disable no-new */
 new Vue({
