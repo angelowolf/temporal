@@ -8,6 +8,7 @@ import Axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
 import SelectUbicaccion from './components/util/selectUbicaccion'
+import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
 
 Vue.config.productionTip = false
 
@@ -27,6 +28,11 @@ Axios.interceptors.request.use(function (config) {
 })
 
 Vue.component('selectUbicaccion', SelectUbicaccion)
+Vue.component('boton', Boton)
+Vue.component('boton-guardar', BotonGuardar)
+Vue.component('boton-buscar', BotonBuscar)
+Vue.component('boton-editar', BotonEditar)
+Vue.component('boton-eliminar', BotonEliminar)
 
 /* eslint-disable no-new */
 new Vue({

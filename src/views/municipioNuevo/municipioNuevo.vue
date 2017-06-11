@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-12">
-        <button type="button" class="btn btn-success pull-right m-xs"><i class="fa fa-save"></i> Guardar</button>
+        <boton-guardar clase="pull-right m-xs" size=""></boton-guardar>
         <router-link exact :to="'/municipios'" class="btn btn-secondary pull-right m-xs">Cancelar</router-link>
       </div>
     </div>
@@ -87,7 +87,7 @@
                     <select-ubicaccion :esFiltro="false" classSelect="col-md-12"  @localidadSeleccionada="localidadSeleccionada">
                     </select-ubicaccion>
                     <div class="col-md-12 text-right">
-                      <button type="button" class="btn btn-primary float-right m-xs"><i class="fa fa-plus"></i> Agregar</button>
+                      <boton label="Agregar" type="primary" clase="m-xs float-right" size=""></boton>
                     </div>
                   </div>
                   <div class="col-md-5 p-l-xs p-r-xs">
@@ -103,8 +103,7 @@
                           <tr>
                             <td>Córdoba</td>
                             <td style="width: 14px;">
-                              <button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i>
-                              </button>
+                              <boton-eliminar></boton-eliminar>                              
                             </td>
                           </tr>
                         </tbody>

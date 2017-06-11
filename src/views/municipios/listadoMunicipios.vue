@@ -37,12 +37,10 @@
               <td class="text-center" style="vertical-align: middle;">1</td>
               <td class="text-center" style="vertical-align: middle;"></td>
               <th class="text-center" style="width: 14px;">
-                <button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i>
-                </button>
+                <boton-editar></boton-editar>
               </th>
               <th class="text-center" style="width: 14px;">
-                <button class="btn btn-danger btn-xs" @click="$emit('eliminarMunicipio')"><i class="glyphicon glyphicon-trash"></i>
-                </button>
+              <boton-eliminar @click="$emit('eliminarMunicipio')"></boton-eliminar>
               </th>
             </tr>
           </tbody>

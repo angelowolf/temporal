@@ -54,7 +54,7 @@
               <div class="col-6 text-right">
                 <label style="margin-bottom: 0px;"></label>
                 <p class="input-group input-group-sm" style="width: 100%;">
-                  <button @click="buscar" class="btn btn-primary btn-sm" ladda="buscando" type="button"><i class="fa fa-search"></i> Buscar</button>
+                <boton-buscar  @click="buscar" ref="botonBuscar" labelCarga="Buscando"></boton-buscar>
                 </p>
               </div>
             </div>
@@ -85,7 +85,13 @@
     },
     methods: {
       buscar () {
+        let ref = this
         console.log(this.filtros)
+        this.$refs.botonBuscar.toggleState()
+        setTimeout(function () {
+          ref.$refs.botonBuscar.toggleState()
+        },
+        1000)
       },
       paisSeleccionado (id) {
         this.filtros.idPais = id
