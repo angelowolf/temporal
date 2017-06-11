@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="animated fadeIn">
     <div class="row">
       <div class="col-12">
         <boton-guardar clase="pull-right m-xs" size=""></boton-guardar>

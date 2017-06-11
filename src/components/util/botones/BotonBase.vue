@@ -41,7 +41,6 @@
       toggleState () {
         this.disabled = !this.disabled
         this.newIcon = this.disabled ? 'circle-o-notch fa-spin' : this.icon
-        console.log('asd', (this.disabled && this.labelCarga !== ''))
         this.newLabel = this.disabled && this.labelCarga !== '' ? this.labelCarga : this.label
       }
     }

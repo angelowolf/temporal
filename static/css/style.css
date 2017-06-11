@@ -5926,22 +5926,6 @@ body {
   -webkit-animation-duration: 2s;
   animation-duration: 2s; }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn; }
-
 .aside-menu {
   z-index: 1019;
   width: 250px;

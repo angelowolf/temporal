@@ -8,6 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
+    "test": "node build/test.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
@@ -15,8 +16,10 @@
     "bootstrap-vue": "^0.16.1",
     "vue": "^2.3.3",
     "vue-easy-toast": "^1.0.2",
+    "vue-progressbar": "^0.7.2",
     "vue-router": "^2.3.1",
     "vue-strap": "github:wffranco/vue-strap",
+    "vuejs-datepicker": "^0.7.14",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

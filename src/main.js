@@ -7,13 +7,32 @@ import store from './store/'
 import Axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
+import VueProgressBar from 'vue-progressbar'
+import Datepicker from 'vuejs-datepicker'
 import SelectUbicaccion from './components/util/selectUbicaccion'
 import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
 
 Vue.config.productionTip = false
 
+Vue.component('datepicker', Datepicker)
 Vue.use(BootstrapVue)
 Vue.use(Toast)
+
+// PROGRESA BAR
+const options = {
+  color: '#bffaf3',
+  failedColor: '#874b4b',
+  thickness: '5px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300
+  },
+  autoRevert: true,
+  location: 'top',
+  inverse: false
+}
+Vue.use(VueProgressBar, options)
 
 Vue.prototype.$http = Axios
 

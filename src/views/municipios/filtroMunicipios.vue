@@ -51,6 +51,15 @@
                   />
                 </p>
               </div>
+
+
+              <div class="col-md-3">
+                  <label style="margin-bottom: 0px;">FECHA</label>
+                    <datepicker language="es" :bootstrapStyling="true" placeholder="Seleccione una fecha..." :clear-button="true" clear-button-icon="fa fa-close" :calendar-button="true" calendar-button-icon="fa fa-calendar" input-class="fix-fecha-componente"></datepicker>
+                </div>
+
+
+                
               <div class="col-6 text-right">
                 <label style="margin-bottom: 0px;"></label>
                 <p class="input-group input-group-sm" style="width: 100%;">
@@ -66,6 +75,7 @@
 </div>
 </template>
 <script>
+
   export default {
     name: 'filtroMunicipios',
     data () {
