@@ -8,15 +8,21 @@ import Axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
 import VueProgressBar from 'vue-progressbar'
+import VeeValidate, { Validator } from 'vee-validate'
 import Datepicker from 'vuejs-datepicker'
 import SelectUbicaccion from './components/util/selectUbicaccion'
 import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
-
+import FormHelp from './components/util/FormHelp'
+import es from './../static/es'
 Vue.config.productionTip = false
 
 Vue.component('datepicker', Datepicker)
 Vue.use(BootstrapVue)
 Vue.use(Toast)
+Validator.addLocale(es)
+Vue.use(VeeValidate, {
+  locale: 'es'
+})
 
 // PROGRESA BAR
 const options = {
@@ -52,6 +58,19 @@ Vue.component('boton-guardar', BotonGuardar)
 Vue.component('boton-buscar', BotonBuscar)
 Vue.component('boton-editar', BotonEditar)
 Vue.component('boton-eliminar', BotonEliminar)
+Vue.component('form-help', FormHelp)
+
+/* DIRECTIVAS */
+
+Vue.directive('error', (el, binding) => {
+  if (binding.value.form !== undefined) {
+    if (binding.value.form.errors.has(binding.value.campo)) {
+      el.className += el.className.indexOf('has-danger') < 0 ? ' has-danger' : ''
+    } else {
+      el.className = el.className.replace('has-danger', '')
+    }
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

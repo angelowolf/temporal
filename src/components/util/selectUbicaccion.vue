@@ -10,7 +10,7 @@
         @change="cambiaPais()">
           <option value="-1" v-if="esFiltro">Todas</option>
           <option value="null" v-if="!esFiltro" disabled="true">Seleccione...</option>
-          <option :value="pais.id" v-for="pais in getPaisesTodos">{{pais.nombre}}</option>
+          <option :value="pais.paiCodigo" v-for="pais in getPaisesTodos">{{pais.paiNombre}}</option>
         </select>
       </p>
     </div>
@@ -18,13 +18,13 @@
       <label style="margin-bottom: 0px;">Provincia</label>
       <p class="input-group input-group-sm" style="width: 100%;">
         <select
-        class="form-control form-control-sm"
+        class="form-control form-control-sm" 
         name="provincia" 
         v-model="provinciaSelect"
         @change="cambiaProvincia()">
           <option value="-1" v-if="esFiltro">Todas</option>
           <option value="null" v-if="!esFiltro" disabled="true">Seleccione...</option>
-          <option :value="provincia.id" v-for="provincia in provincias">{{provincia.nombre}}</option>
+          <option :value="provincia.prvCodigo" v-for="provincia in provincias">{{provincia.nombre}}</option>
         </select>
       </p>
     </div>
@@ -38,7 +38,7 @@
         @change="cambiaDepartamento()">
           <option value="-1" v-if="esFiltro">Todas</option>
           <option value="null" v-if="!esFiltro" disabled="true">Seleccione...</option>
-          <option :value="departamento.id" v-for="departamento in departamentos">{{departamento.nombre}}</option>
+          <option :value="departamento.depCodigo" v-for="departamento in departamentos">{{departamento.nombre}}</option>
         </select>
       </p>
     </div>
@@ -52,7 +52,7 @@
         @change="cambiaLocalidad()">
           <option value="-1" v-if="esFiltro">Todas</option>
           <option value="null" v-if="!esFiltro" disabled="true">Seleccione...</option>
-          <option :value="localdiad.id" v-for="localdiad in localidades">{{localdiad.nombre}}</option>
+          <option :value="localdiad.locCodigo" v-for="localdiad in localidades">{{localdiad.nombre}}</option>
         </select>
       </p>
     </div>
@@ -106,7 +106,7 @@
       cambiaPais () {
         if (this.paisSelect && this.paisSelect !== null && this.paisSelect !== -1) {
           vueHttp('get', `${getProvincias}?pais_id=${this.paisSelect}`, response => {
-            this.provincias = response.data.datos
+            this.provincias = response.data
           })
         } else {
           this.provincias = []
@@ -119,7 +119,7 @@
       cambiaProvincia () {
         if (this.provinciaSelect !== null && this.provinciaSelect !== -1) {
           vueHttp('get', `${getDepartamentos}?provincia_id=${this.provinciaSelect}`, response => {
-            this.departamentos = response.data.datos
+            this.departamentos = response.data
           })
         } else {
           this.departamentos = []
@@ -131,7 +131,7 @@
       cambiaDepartamento () {
         if (this.departamentoSelect !== null && this.departamentoSelect !== -1) {
           vueHttp('get', `${getLocalidades}?departamento_id=${this.departamentoSelect}`, response => {
-            this.localidades = response.data.datos
+            this.localidades = response.data
           })
         } else {
           this.localidades = []
@@ -144,13 +144,13 @@
       },
       cargarCombos () {
         vueHttp('get', `${getLocalidades}getCompleto?id=${this.idLocalidad}`, response => {
-          this.provincias = response.data.datos.provincias
-          this.departamentos = response.data.datos.departamentos
-          this.localidades = response.data.datos.localidades
-          this.paisSelect = response.data.datos.idPais
-          this.provinciaSelect = response.data.datos.idProvincia
-          this.departamentoSelect = response.data.datos.idDepartamento
-          this.localidadSelect = response.data.datos.idLocalidad
+          this.provincias = response.data.provincias
+          this.departamentos = response.data.departamentos
+          this.localidades = response.data.localidades
+          this.paisSelect = response.data.idPais
+          this.provinciaSelect = response.data.idProvincia
+          this.departamentoSelect = response.data.idDepartamento
+          this.localidadSelect = response.data.idLocalidad
         })
       }
     },

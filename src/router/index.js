@@ -36,8 +36,12 @@ export default new Router({
           path: '/municipios/nuevo',
           name: 'Nuevo Municipio',
           component: MunicipioNuevo
+        },
+        {
+          path: '/municipios/editar/:munId',
+          name: 'Editar Municipio',
+          component: MunicipioNuevo
         }
-
       ]
     }
   ]

@@ -40,4 +40,21 @@ export default {
 .fix-fecha-componente{
   background-color: #ffffff !important;
 }  
+.alert-td > div{
+  margin-bottom: 0px;
+}
+.text-danger {
+  color: red;
+  font-size: 11px;
+}
+.boton-disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+.descripcion {
+  display: block;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
 </style>

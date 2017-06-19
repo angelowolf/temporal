@@ -15,7 +15,7 @@ const mutations = {
 const actions = {
   cargarPaises: ({commit}) => {
     vueHttp('get', getPaises, response => {
-      commit('SET_PAISES', response.data.datos)
+      commit('SET_PAISES', response.data)
     })
   }
 }

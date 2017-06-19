@@ -2,7 +2,7 @@
   <div class="row">    
     <div class="col-12 m-t-15">
       <div class="card">
-        <div class="card-header bg-primary">
+        <div class="card-header">
           Filtros
         </div>
         <div class="card-block" @keyup.enter="buscar">
@@ -53,12 +53,12 @@
               </div>
 
 
-              <div class="col-md-3">
+            <!--   <div class="col-md-3">
                   <label style="margin-bottom: 0px;">FECHA</label>
                     <datepicker language="es" :bootstrapStyling="true" placeholder="Seleccione una fecha..." :clear-button="true" clear-button-icon="fa fa-close" :calendar-button="true" calendar-button-icon="fa fa-calendar" input-class="fix-fecha-componente"></datepicker>
                 </div>
 
-
+ -->
                 
               <div class="col-6 text-right">
                 <label style="margin-bottom: 0px;"></label>
@@ -95,13 +95,7 @@
     },
     methods: {
       buscar () {
-        let ref = this
-        console.log(this.filtros)
-        this.$refs.botonBuscar.toggleState()
-        setTimeout(function () {
-          ref.$refs.botonBuscar.toggleState()
-        },
-        1000)
+        this.$emit('buscar', this.filtros)
       },
       paisSeleccionado (id) {
         this.filtros.idPais = id
@@ -114,6 +108,9 @@
       },
       localidadSeleccionada (id) {
         this.filtros.idLocalidad = id
+      },
+      toogleBuscar () {
+        this.$refs.botonBuscar.toggleState()
       }
     }
   }

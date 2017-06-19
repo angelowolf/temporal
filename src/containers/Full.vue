@@ -46,7 +46,7 @@ export default {
   },
   created () {
     this.cargarPaises()
-    // this.cargarParametros()
+    this.cargarParametros()
   }
 }
 </script>
