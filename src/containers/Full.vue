@@ -1,16 +1,10 @@
 <template>
   <div class="app">
-    <AppHeader/>
-    <div class="app-body">
-      <Sidebar/>
-      <main class="main">
-        <breadcrumb :list="list"/>
+      <main class="main m-t-15">
         <div class="container-fluid">
           <router-view></router-view>
         </div>
       </main>
-    </div>
-    <AppFooter/>
   </div>
 </template>
 

@@ -37,6 +37,32 @@ export default {
 }
 </script>
 <style>
+label{
+  font-size: 11px;
+  font-weight: bold;  
+}
+.form-control-sm, .input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  font-size: 0.78rem;
+}
+.btn-success{
+  color: #fff;
+  background-color: #62cb31;
+  border-color: #62cb31;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #34495e;
+    border-color: #34495e;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #34495e;
+    border-color: #34495e;
+}
+.btn{
+  font-size: 0.875rem;
+}
 .fix-fecha-componente{
   background-color: #ffffff !important;
 }  
