@@ -7,11 +7,12 @@ import store from './store/'
 import Axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
+import Datepicker from './components/util/datepicker'
 
 Vue.config.productionTip = false
-
 Vue.use(BootstrapVue)
 Vue.use(Toast)
+Vue.component('fecha', Datepicker)
 
 Vue.prototype.$http = Axios
 

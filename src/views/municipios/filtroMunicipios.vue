@@ -84,6 +84,7 @@
                 <input type="text" class="form-control" placeholder="Gestor Asignado..."
                 />
               </p>
+              <fecha style="width:100%" :options="op"></fecha>
             </div>
             <div class="col-6 text-right">
               <label style="margin-bottom: 0px;"></label>
@@ -99,6 +100,13 @@
 </template>
 <script>
 export default {
-  name: 'filtroMunicipios'
+  name: 'filtroMunicipios',
+  data () {
+    return {
+      op: {
+        mode: 'range'
+      }
+    }
+  }
 }
 </script>
