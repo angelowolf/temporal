@@ -9,7 +9,6 @@ import BootstrapVue from 'bootstrap-vue'
 import Toast from 'vue-easy-toast'
 import VueProgressBar from 'vue-progressbar'
 import VeeValidate, { Validator } from 'vee-validate'
-import Datepicker from 'vuejs-datepicker'
 import SelectUbicaccion from './components/util/selectUbicaccion'
 import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
 import FormHelp from './components/util/FormHelp'
@@ -18,7 +17,6 @@ import Datepicker from './components/util/datepicker'
 
 Vue.config.productionTip = false
 
-Vue.component('datepicker', Datepicker)
 Vue.use(BootstrapVue)
 Vue.use(Toast)
 Validator.addLocale(es)

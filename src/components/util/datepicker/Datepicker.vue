@@ -24,7 +24,7 @@
     props: {
       options: {
         type: Object,
-        default () {}
+        default () { return {} }
       },
       name: String,
       placeholder: String,
