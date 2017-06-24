@@ -14,6 +14,8 @@ import SelectUbicaccion from './components/util/selectUbicaccion'
 import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
 import FormHelp from './components/util/FormHelp'
 import es from './../static/es'
+import Datepicker from './components/util/datepicker'
+
 Vue.config.productionTip = false
 
 Vue.component('datepicker', Datepicker)
@@ -23,6 +25,7 @@ Validator.addLocale(es)
 Vue.use(VeeValidate, {
   locale: 'es'
 })
+Vue.component('fecha', Datepicker)
 
 // PROGRESA BAR
 const options = {
