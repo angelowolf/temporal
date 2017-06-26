@@ -1,5 +1,6 @@
 <template>
   <div class="animated fadeIn">
+  <hello></hello>
   <div class="row">
     <div class="col-md-4">
       <label style="margin-bottom: 0px;">Compania</label>

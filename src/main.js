@@ -10,20 +10,26 @@ import Toast from 'vue-easy-toast'
 import VueProgressBar from 'vue-progressbar'
 import VeeValidate, { Validator } from 'vee-validate'
 import SelectUbicaccion from './components/util/selectUbicaccion'
-import { Boton, BotonBuscar, BotonGuardar, BotonEditar, BotonEliminar } from './components/util/botones'
-import FormHelp from './components/util/FormHelp'
 import es from './../static/es'
-import Datepicker from './components/util/datepicker'
+import Componentes from 'componentes-vue'
+// CSS
+import 'flatpickr/dist/themes/material_blue.css'
+import 'componentes-vue/dist/componentes-vue.min.css'
+import './../static/css/font-awesome.min.css'
+import './../static/css/glyphicons.css'
+import './../static/css/bootstrap-4.css'
+import './../static/css/bootstrap-vue.css'
+import './../static/css/custom.css'
 
 Vue.config.productionTip = false
 
+Vue.use(Componentes)
 Vue.use(BootstrapVue)
 Vue.use(Toast)
 Validator.addLocale(es)
 Vue.use(VeeValidate, {
   locale: 'es'
 })
-Vue.component('fecha', Datepicker)
 
 // PROGRESA BAR
 const options = {
@@ -54,12 +60,6 @@ Axios.interceptors.request.use(function (config) {
 })
 
 Vue.component('selectUbicaccion', SelectUbicaccion)
-Vue.component('boton', Boton)
-Vue.component('boton-guardar', BotonGuardar)
-Vue.component('boton-buscar', BotonBuscar)
-Vue.component('boton-editar', BotonEditar)
-Vue.component('boton-eliminar', BotonEliminar)
-Vue.component('form-help', FormHelp)
 
 /* DIRECTIVAS */
 
